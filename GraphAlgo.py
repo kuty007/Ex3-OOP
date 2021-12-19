@@ -1,7 +1,19 @@
+from typing import List
+
 from GraphAlgoInterface import GraphAlgoInterface
+from GraphInterface import GraphInterface
 
 
 class GraphAlgo(GraphAlgoInterface):
+    def get_graph(self) -> GraphInterface:
+        pass
+
+    def TSP(self, node_lst: List[int]) -> (List[int], float):
+        pass
+
+    def centerPoint(self) -> (int, float):
+        pass
+
     def load_from_json(self, file_name: str) -> bool:
         pass
 
