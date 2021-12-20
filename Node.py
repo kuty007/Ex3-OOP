@@ -1,3 +1,4 @@
+
 class Node:
     """
     This class represent a node (vertex).
@@ -18,7 +19,7 @@ class Node:
         self.__ni_out = {}
         self.__ni_in = {}
 
-    def add_neighbor_out(self, neighbor_id: int, weight: float) -> None:
+    def add_edge_out(self, neighbor_id: int, weight: float) -> None:
         """
         Add "edge" that connected from this node (node_id ---> neighbor_id).
         :param neighbor_id: dest node key
@@ -26,7 +27,7 @@ class Node:
         """
         self.__ni_out[neighbor_id] = weight
 
-    def add_neighbor_in(self, neighbor_id: int, weight: float) -> None:
+    def add_edge_in(self, neighbor_id: int, weight: float) -> None:
         """
         Add "edge" that connected to this node (neighbor_id ---> node_id).
         :param neighbor_id: dest node key
@@ -34,7 +35,7 @@ class Node:
         """
         self.__ni_in[neighbor_id] = weight
 
-    def get_connections_out(self) -> dict:
+    def get_edge_out(self) -> dict:
         """
         Return a dictionary that holds all the "edges" that connected from this node,
         each edge is represented using a pair (key, edge weight).
@@ -42,7 +43,7 @@ class Node:
         """
         return self.__ni_out
 
-    def get_connections_in(self) -> dict:
+    def get_edge_in(self) -> dict:
         """
         Return a dictionary that holds all the "edges" that connected to this node,
         each edge is represented using a pair (key, edge weight).
@@ -77,17 +78,18 @@ class Node:
         Return the node as dictionary {"pos": "x", "y", "z", "id": key}
         :return: the node as dictionary
         """
-        loc_as_str = str(self.get_location())
-        m_dict = {"pos": loc_as_str[1:-1], "id": self.get_key()}
+        string_loc = str(self.get_location())
+        m_dict = {"pos": string_loc[1:-1], "id": self.get_key()}
         return m_dict
 
     def as_dict_edge(self):
+
         """
         Return the edge as dictionary {"src": src node_id, "w": edge weight, "dest": dest node_id}
         :return: the edge as dictionary
         """
         l_list = []
-        for k, v in self.get_connections_out().items():
+        for k, v in self.get_edge_out().items():
             m_dict = {"src": int(self.get_key()), "w": float(v), "dest": int(k)}
             l_list.append(m_dict)
         return l_list
