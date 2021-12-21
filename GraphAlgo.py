@@ -41,7 +41,13 @@ class GraphAlgo(GraphAlgoInterface):
         return True
 
     def save_to_json(self, file_name: str) -> bool:
-        pass
+        try:
+            with open(file_name, "w") as f:
+                json.dump(self.graph, default=lambda o: o.as_dict(), indent=4, fp=f)
+        except IOError as e:
+            print(e)
+            return False
+        return True
 
     def shortest_path(self, id1: int, id2: int) -> (float, list):
         pass
