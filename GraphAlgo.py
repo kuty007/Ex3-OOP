@@ -1,9 +1,10 @@
 from typing import List
-import random
 import json
 from DiGraph import DiGraph
 from GraphAlgoInterface import GraphAlgoInterface
 from GraphInterface import GraphInterface
+import heapq
+from numpy import inf
 
 
 class GraphAlgo(GraphAlgoInterface):
@@ -50,7 +51,42 @@ class GraphAlgo(GraphAlgoInterface):
         return True
 
     def shortest_path(self, id1: int, id2: int) -> (float, list):
-        pass
+        if self.graph.nodes.get(id1) is None:
+            raise Exception('Node {} is not exist in the graph'.format(id1))
+        if self.graph.nodes.get(id2) is None:
+            raise Exception('Node {} is not exist in the graph'.format(id2))
+        if id1 == id2:
+            return 0, [id1]
+        return self.dijkstra(id1, id2)
 
     def plot_graph(self) -> None:
         pass
+
+    def dijkstra(self, src, dest):
+        distances = {node: inf for node in self.graph.nodes.keys()}
+        previous_nodes = {src: -1}
+        distances[src] = 0
+        queue = []
+        heapq.heappush(queue, (0, src))
+        while queue:
+            current_node = heapq.heappop(queue)[1]
+            if distances[current_node] == inf:
+                break
+            for neighbour, w in self.graph.nodes.get(current_node).get_edge_out().items():
+                alternative_route = distances[current_node] + w
+                if alternative_route < distances[neighbour]:
+                    distances[neighbour] = alternative_route
+                    previous_nodes[neighbour] = current_node
+                    heapq.heappush(queue, (distances[neighbour], neighbour))
+                if current_node == dest:
+                    break
+
+        path, current_node = [], dest
+        if distances[dest] == inf:
+            return inf, []
+        while current_node != -1:
+            path.insert(0, current_node)
+            current_node = previous_nodes[current_node]
+
+        return distances[dest], path
+
