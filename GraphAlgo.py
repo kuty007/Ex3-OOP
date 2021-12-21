@@ -19,7 +19,18 @@ class GraphAlgo(GraphAlgoInterface):
         return self.graph
 
     def TSP(self, node_lst: List[int]) -> (List[int], float):
-        pass
+        if not self.isconcted:
+            return None
+        path = []
+        start_node = node_lst[0]
+        node_lst.remove(start_node)
+        while len(node_lst) > 0:
+            closet = -1
+            min = inf
+            for i in node_lst:
+
+
+    def isconcted(self):
 
     def centerPoint(self) -> (int, float):
         pass
@@ -89,4 +100,3 @@ class GraphAlgo(GraphAlgoInterface):
             current_node = previous_nodes[current_node]
 
         return distances[dest], path
-
