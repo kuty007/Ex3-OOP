@@ -1,3 +1,4 @@
+import queue
 from typing import List
 import json
 from DiGraph import DiGraph
@@ -100,3 +101,29 @@ class GraphAlgo(GraphAlgoInterface):
             current_node = previous_nodes[current_node]
 
         return distances[dest], path
+
+    def isConnect(self):
+        vertex_size = self.graph.v_size()
+        for i in self.graph.get_all_v():
+            src = self.graph.get_node(i)
+            list1 = self.is_connected_bfs(self, src)
+            len_listVertex = len(list1)
+            if len_listVertex != vertex_size:
+                return False
+
+        return True
+
+    def is_connected_bfs(self, src: int, ni: dict):
+        vis = set()
+        q = queue.Queue()
+        current = self.DiGraph.graph.get(src)
+        vis.add(current)
+        q.put(current)
+        while not q.empty():
+            current = q.get()
+            for ed in ni.get(current.key):
+                n = self.DiGraph.graph.get(ed)
+                if not vis._contains_(n):
+                    q.put(n)
+                    vis.add(n)
+        return vis
