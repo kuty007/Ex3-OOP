@@ -1,4 +1,5 @@
 import queue
+import random
 from typing import List
 import json
 from DiGraph import DiGraph
@@ -20,18 +21,31 @@ class GraphAlgo(GraphAlgoInterface):
         return self.graph
 
     def TSP(self, node_lst: List[int]) -> (List[int], float):
-        if not self.isconcted:
-            return None
+        path_nodes=[]
         path = []
         start_node = node_lst[0]
+        path.append(start_node)
         node_lst.remove(start_node)
+        total_distance = 0
         while len(node_lst) > 0:
             closet = -1
-            min = inf
+            min_value = inf
             for i in node_lst:
-
-
-    def isconcted(self):
+                short_path = self.shortest_path(start_node, i)
+                min_dis = short_path[0]
+                if min_dis == inf:
+                    raise Exception("the nodes on the list are not connected can't find TSP")
+                else:
+                    if min_dis < min_value:
+                        min_value = min_dis
+                        path_nodes = short_path[1]
+                        closet = i
+            path_nodes.remove(start_node)
+            path.extend(path_nodes)
+            start_node = closet
+            node_lst.remove(start_node)
+            total_distance += min_value
+        return path, total_distance
 
     def centerPoint(self) -> (int, float):
         pass
@@ -48,6 +62,10 @@ class GraphAlgo(GraphAlgoInterface):
                     for j in arr:
                         pos.append(float(j))
                     gr.add_node(int(i.get("id")), tuple(pos))
+                else:
+                    x = random.uniform(0, 100)
+                    y = random.uniform(0, 100)
+                    gr.add_node(int(i.get("id")), (x, y, 0))
             for i in graph_dict.get("Edges"):
                 gr.add_edge(int(i.get("src")), int(i.get("dest")), float(i.get("w")))
         self.graph = gr
@@ -56,7 +74,7 @@ class GraphAlgo(GraphAlgoInterface):
     def save_to_json(self, file_name: str) -> bool:
         try:
             with open(file_name, "w") as f:
-                json.dump(self.graph, default=lambda o: o.as_dict(), indent=4, fp=f)
+                json.dump(self.graph, default=lambda o: o.graph_dict(), indent=4, fp=f)
         except IOError as e:
             print(e)
             return False
@@ -102,13 +120,13 @@ class GraphAlgo(GraphAlgoInterface):
 
         return distances[dest], path
 
-    def isConnect(self):
+    def is_connect(self):
         vertex_size = self.graph.v_size()
         for i in self.graph.get_all_v():
             src = self.graph.get_node(i)
-            list1 = self.is_connected_bfs(self, src)
-            len_listVertex = len(list1)
-            if len_listVertex != vertex_size:
+            list1 = self.is_connected_bfs(src)
+            len_list_vertex = len(list1)
+            if len_list_vertex != vertex_size:
                 return False
 
         return True
@@ -116,15 +134,20 @@ class GraphAlgo(GraphAlgoInterface):
     def is_connected_bfs(self, src: int, ni: dict):
         vis = set()
         q = queue.Queue()
-        current = self.DiGraph.graph.get(src)
+        current = self.graph.get(src)
         vis.add(current)
         q.put(current)
         while not q.empty():
             current = q.get()
             for ed in ni.get(current.key):
-                n = self.DiGraph.graph.get(ed)
-                if not vis._contains_(n):
+                n = self.graph.get(ed)
+                if not vis.contains(n):
                     q.put(n)
                     vis.add(n)
         return vis
-    af
+
+
+g_algo = GraphAlgo()  # init an empty graph - for the GraphAlgo
+file = "T0.json"
+g_algo.load_from_json(file)
+g_algo.is_connect()
