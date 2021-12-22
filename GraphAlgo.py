@@ -7,7 +7,7 @@ from GraphAlgoInterface import GraphAlgoInterface
 from GraphInterface import GraphInterface
 import heapq
 from numpy import inf
-
+import matplotlib.pyplot as plt
 
 class GraphAlgo(GraphAlgoInterface):
     def __init__(self, digraph: DiGraph = None):
