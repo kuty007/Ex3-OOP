@@ -48,7 +48,20 @@ class GraphAlgo(GraphAlgoInterface):
         return path, total_distance
 
     def centerPoint(self) -> (int, float):
-        pass
+        if not self.is_connect():
+            return (-1, inf),
+        dictionary = {}
+        for i in self.graph.get_all_v():
+            mx = -inf
+            for j in self.graph.get_all_v():
+                if i != j:
+                    max_dis = self.shortest_path(i, j)[0]
+                    if max_dis > mx:
+                        mx = max_dis
+
+            dictionary.update({i: mx})
+        x = min(dictionary, key=dictionary.get)
+        return x, dictionary.get(x)
 
     def load_from_json(self, file_name: str) -> bool:
         gr = DiGraph()
@@ -110,14 +123,12 @@ class GraphAlgo(GraphAlgoInterface):
                     heapq.heappush(queue, (distances[neighbour], neighbour))
                 if current_node == dest:
                     break
-
         path, current_node = [], dest
         if distances[dest] == inf:
             return inf, []
         while current_node != -1:
             path.insert(0, current_node)
             current_node = previous_nodes[current_node]
-
         return distances[dest], path
 
     def is_connect(self):
@@ -150,4 +161,4 @@ class GraphAlgo(GraphAlgoInterface):
 g_algo = GraphAlgo()  # init an empty graph - for the GraphAlgo
 file = "A4.json"
 g_algo.load_from_json(file)
-print(g_algo.is_connect())
+print(g_algo.centerPoint())
