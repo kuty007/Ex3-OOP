@@ -132,19 +132,19 @@ class GraphAlgo(GraphAlgoInterface):
         return True
 
     def is_connected_bfs(self, src: int):
-        vis = []
+        visited = []
         q = queue.Queue()
         current = self.graph.get_node(src)
-        vis.append(current)
+        visited.append(current)
         q.put(current)
         while not q.empty():
             current = q.get()
             for ed in current.get_edge_out():
                 nod = self.graph.get_node(ed)
-                if nod not in vis:
+                if nod not in visited:
                     q.put(nod)
-                    vis.append(nod)
-        return vis
+                    visited.append(nod)
+        return visited
 
 
 g_algo = GraphAlgo()  # init an empty graph - for the GraphAlgo
