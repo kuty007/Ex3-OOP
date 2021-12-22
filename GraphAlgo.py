@@ -21,7 +21,7 @@ class GraphAlgo(GraphAlgoInterface):
         return self.graph
 
     def TSP(self, node_lst: List[int]) -> (List[int], float):
-        path_nodes=[]
+        path_nodes = []
         path = []
         start_node = node_lst[0]
         path.append(start_node)
@@ -124,30 +124,30 @@ class GraphAlgo(GraphAlgoInterface):
         vertex_size = self.graph.v_size()
         for i in self.graph.get_all_v():
             src = self.graph.get_node(i)
-            list1 = self.is_connected_bfs(src)
+            list1 = self.is_connected_bfs(src.get_key())
             len_list_vertex = len(list1)
             if len_list_vertex != vertex_size:
                 return False
 
         return True
 
-    def is_connected_bfs(self, src: int, ni: dict):
-        vis = set()
+    def is_connected_bfs(self, src: int):
+        vis = []
         q = queue.Queue()
-        current = self.graph.get(src)
-        vis.add(current)
+        current = self.graph.get_node(src)
+        vis.append(current)
         q.put(current)
         while not q.empty():
             current = q.get()
-            for ed in ni.get(current.key):
-                n = self.graph.get(ed)
-                if not vis.contains(n):
-                    q.put(n)
-                    vis.add(n)
+            for ed in current.get_edge_out():
+                nod = self.graph.get_node(ed)
+                if nod not in vis:
+                    q.put(nod)
+                    vis.append(nod)
         return vis
 
 
 g_algo = GraphAlgo()  # init an empty graph - for the GraphAlgo
-file = "T0.json"
+file = "A4.json"
 g_algo.load_from_json(file)
-g_algo.is_connect()
+print(g_algo.is_connect())
