@@ -18,9 +18,11 @@ def check():
     (7, 6.806805834715163)
     ([1,3,4,2],3.5)
     """
-    #check0()
+    check0()
+    check1()
+    check2()
     check3()
-    #check2()
+
 
 
 def check0():
@@ -99,7 +101,7 @@ def check3():
     g.add_edge(3, 4, 2.1)
     g.add_edge(4, 2, .5)
     g_algo = GraphAlgo(g)
-    print(g_algo.centerPoint())
+    #print(g_algo.centerPoint())
     print(g_algo.TSP([1, 2, 4]))
     g_algo.plot_graph()
 

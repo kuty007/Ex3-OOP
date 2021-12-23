@@ -48,9 +48,10 @@ class GraphAlgo(GraphAlgoInterface):
         return path, total_distance
 
     def centerPoint(self) -> (int, float):
-        if not self.is_connect():
+        if not self.is_connect():  # if the graph not connected we can't find a center
             return (-1, inf),
-        dictionary = {}
+        dictionary = {}  # this will contain each node and the value of the longest shortest_path from him to node
+        # in the graph
         for i in self.graph.get_all_v():
             mx = -inf
             for j in self.graph.get_all_v():
@@ -58,7 +59,6 @@ class GraphAlgo(GraphAlgoInterface):
                     max_dis = self.shortest_path(i, j)[0]
                     if max_dis > mx:
                         mx = max_dis
-
             dictionary.update({i: mx})
         x = min(dictionary, key=dictionary.get)
         return x, dictionary.get(x)
@@ -103,16 +103,34 @@ class GraphAlgo(GraphAlgoInterface):
         return self.dijkstra(id1, id2)
 
     def plot_graph(self) -> None:
-        pass
+        for node in self.graph.get_all_v().values():
+            if node.get_location() is None:
+                loc_x = random.uniform(0, 100)
+                loc_y = random.uniform(0, 100)
+                location = (loc_x, loc_y, 0)
+                node.set_location(location)
+            x, y, z = node.get_location()
+            plt.plot(x, y, markersize=15, marker="*", color='blue')
+            plt.text(x, y, str(node.get_key()), color="#FFDF00", fontsize=10)
+            for dest_id, w in self.graph.all_out_edges_of_node(node.get_key()).items():
+                dest = self.graph.get_node(dest_id)
+                if dest.get_location() is None:
+                    loc_x2 = random.uniform(0, 100)
+                    loc_y2 = random.uniform(0, 100)
+                    location = (loc_x2, loc_y2, 0)
+                    dest.set_location(location)
+                x2, y2, z2 = dest.get_location()
+                plt.annotate("", xy=(x, y), xytext=(x2, y2), arrowprops=dict(arrowstyle="->"))
+        plt.show()
 
     def dijkstra(self, src, dest):
         distances = {node: inf for node in self.graph.nodes.keys()}
         previous_nodes = {src: -1}
         distances[src] = 0
-        queue = []
-        heapq.heappush(queue, (0, src))
-        while queue:
-            current_node = heapq.heappop(queue)[1]
+        qu = []
+        heapq.heappush(qu, (0, src))
+        while qu:
+            current_node = heapq.heappop(qu)[1]
             if distances[current_node] == inf:
                 break
             for neighbour, w in self.graph.nodes.get(current_node).get_edge_out().items():
@@ -120,7 +138,7 @@ class GraphAlgo(GraphAlgoInterface):
                 if alternative_route < distances[neighbour]:
                     distances[neighbour] = alternative_route
                     previous_nodes[neighbour] = current_node
-                    heapq.heappush(queue, (distances[neighbour], neighbour))
+                    heapq.heappush(qu, (distances[neighbour], neighbour))
                 if current_node == dest:
                     break
         path, current_node = [], dest
@@ -161,4 +179,4 @@ class GraphAlgo(GraphAlgoInterface):
 g_algo = GraphAlgo()  # init an empty graph - for the GraphAlgo
 file = "A4.json"
 g_algo.load_from_json(file)
-print(g_algo.centerPoint())
+g_algo.plot_graph()
