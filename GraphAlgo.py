@@ -179,4 +179,6 @@ class GraphAlgo(GraphAlgoInterface):
 g_algo = GraphAlgo()  # init an empty graph - for the GraphAlgo
 file = "A4.json"
 g_algo.load_from_json(file)
-g_algo.plot_graph()
+for i in g_algo.get_graph().get_all_v():
+    for j in g_algo.get_graph().all_out_edges_of_node(i):
+        print(j)
