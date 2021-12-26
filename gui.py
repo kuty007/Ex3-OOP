@@ -1,18 +1,44 @@
 import math
 
+import pyautogui as pyautogui
+import pygameMenuPro
 import pygame
+import pygame_menu
 import pygame_widgets
+from pygame import surface
 from pygame_widgets.button import Button
 from numpy import inf
+
+import gui
 from GraphAlgo import GraphAlgo
-from DiGraph import DiGraph
+import pygame_gui
+
 
 pygame.init()
 win = pygame.display.set_mode((900, 700))
-button = Button(win, 20, 20, 20, 20)
+
+
+"""Load/Save"""
+button_load = Button(win, 800, 0, 100, 20 , text='Load Graph', radius=20,inactiveColour=(127,0,255), hoverColour = (255, 192, 203),font = pygame.font.SysFont('calibri', 15))
+button_save = Button(win, 800, 25, 100, 20,  text='Save Graph',radius=20,inactiveColour=(127,0,255), hoverColour = (255, 192, 203),font = pygame.font.SysFont('calibri', 15))
+"""Algo"""
+button_tsp = Button(win, 800, 50, 100, 20,  text='Find Tsp',radius=20,inactiveColour=(127,0,255), hoverColour = (255, 192, 203),font = pygame.font.SysFont('calibri', 15))
+button_center = Button(win, 800, 75, 100, 20,  text='Find ceter',radius=20,inactiveColour=(127,0,255), hoverColour = (255, 192, 203),font = pygame.font.SysFont('calibri', 15))
+button_shortestPath = Button(win, 800, 100, 100, 20,  text='Shortest Path',radius=20,inactiveColour=(127,0,255), hoverColour = (255, 192, 203),font = pygame.font.SysFont('calibri', 15))
+button_connected = Button(win, 800, 125, 100, 20,  text='Is Connected',radius=20,inactiveColour=(127,0,255), hoverColour = (255, 192, 203),font = pygame.font.SysFont('calibri', 15))
+"""Graph Basic Actions"""
+button_addNode = Button(win, 800, 150, 100, 20,  text='Add Node',radius=20,inactiveColour=(127,0,255), hoverColour = (255, 192, 203),font = pygame.font.SysFont('calibri', 15))
+button_addEdge = Button(win, 800, 175, 100, 20,  text='Add Edge',radius=20,inactiveColour=(127,0,255), hoverColour = (255, 192, 203),font = pygame.font.SysFont('calibri', 15))
+button_removeNode = Button(win, 800, 200, 100, 20,  text='Remove Node',radius=20,inactiveColour=(127,0,255), hoverColour = (255, 192, 203),font = pygame.font.SysFont('calibri', 15))
+button_removeEdge = Button(win, 800, 225, 100, 20,  text='Remove Edge',radius=20,inactiveColour=(127,0,255), hoverColour = (255, 192, 203),font = pygame.font.SysFont('calibri', 15))
+
+
+
 graph = GraphAlgo()
 graph.load_from_json("A4.json")
 radius = 10
+
+
 
 
 def scale_data():
@@ -73,6 +99,8 @@ def draw_arrow(screen, colour, start, end):
         (end[0] + 6 * math.sin(math.radians(rotation - 120)), end[1] + 6 * math.cos(math.radians(rotation - 120))),
         (end[0] + 6 * math.sin(math.radians(rotation + 120)), end[1] + 6 * math.cos(math.radians(rotation + 120)))))
 
+"""def menu():
+    print()"""
 
 run = True
 while run:
@@ -83,15 +111,72 @@ while run:
             run = False
             quit()
 
-    win.fill((255, 255, 255))
+        if button_load.clicked:
+            graph.load_from_json("A4.gson")
+            print("Loaded")
+
+        if button_save.clicked:
+            graph.save_to_json("A14.gson")
+            pyautogui.alert("Graph was saved")
+
+            print("saved")
+        if button_center.clicked:
+            pyautogui.alert(graph.centerPoint())
+
+        if button_tsp.clicked:
+            print("להוסיף ליסט לבדיקה")
+
+        if button_connected.clicked:
+            if(graph.is_connect()):
+                pyautogui.alert("Graph is connected")
+            else:
+                pyautogui.alert("Graph isn't connected")
+
+        if button_shortestPath.clicked:
+            pyautogui.alert(graph.shortest_path(34,37))
+            print(graph.shortest_path(34,37))
+
+        if button_addEdge.clicked:
+            print("added")
+        if button_addNode.clicked:
+            print("added")
+
+        if button_removeEdge.clicked:
+            print("removed")
+
+        if button_removeNode.clicked:
+            print("removed")
+
+
+    win.fill((0, 0, 0))
 
     # Now
     pygame_widgets.update(events)
 
     # Instead of
-    button.listen(events)
-    button.draw()
+    button_load.listen(events)
+    button_save.listen(events)
+    button_tsp.listen(events)
+    button_center.listen(events)
+    button_connected.listen(events)
+    button_addNode.listen(events)
+    button_addEdge.listen(events)
+    button_removeNode .listen(events)
+    button_removeEdge.listen(events)
+
+    button_load.draw()
+    button_save.draw()
+    button_tsp.draw()
+    button_center.draw()
+    button_connected.draw()
+    button_addNode.draw()
+    button_addEdge.draw()
+    button_removeNode.draw()
+    button_removeEdge.draw()
+
     drew_graph_nodes(win, "blue", graph, radius)
-    drew_edges(win, "black")
+    drew_edges(win, "white")
+
 
     pygame.display.update()
+
