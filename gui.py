@@ -11,7 +11,7 @@ pygame.init()
 win = pygame.display.set_mode((900, 700))
 button = Button(win, 20, 20, 20, 20)
 graph = GraphAlgo()
-graph.load_from_json("A4.json")
+graph.load_from_json("A5.json")
 radius = 10
 
 
@@ -68,8 +68,8 @@ def drew_edges(win_size, color):
 def draw_arrow(screen, colour, start, end):
     pygame.draw.line(screen, colour, start, end, 2)
     rotation = math.degrees(math.atan2(start[1] - end[1], end[0] - start[0])) + 90
-    pygame.draw.polygon(screen, (255, 0, 0), (
-        (end[0] + 6* math.sin(math.radians(rotation)), end[1] + 6 * math.cos(math.radians(rotation))),
+    pygame.draw.polygon(screen, (200, 0, 0), (
+        (end[0] + 6 * math.sin(math.radians(rotation)), end[1] + 6 * math.cos(math.radians(rotation))),
         (end[0] + 6 * math.sin(math.radians(rotation - 120)), end[1] + 6 * math.cos(math.radians(rotation - 120))),
         (end[0] + 6 * math.sin(math.radians(rotation + 120)), end[1] + 6 * math.cos(math.radians(rotation + 120)))))
 
