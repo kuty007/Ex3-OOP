@@ -9,6 +9,7 @@ import heapq
 from numpy import inf
 import matplotlib.pyplot as plt
 
+
 class GraphAlgo(GraphAlgoInterface):
     def __init__(self, digraph: DiGraph = None):
         """
@@ -34,7 +35,7 @@ class GraphAlgo(GraphAlgoInterface):
                 short_path = self.shortest_path(start_node, i)
                 min_dis = short_path[0]
                 if min_dis == inf:
-                    raise Exception("the nodes on the list are not connected can't find TSP")
+                    return inf, []
                 else:
                     if min_dis < min_value:
                         min_value = min_dis
@@ -93,6 +94,13 @@ class GraphAlgo(GraphAlgoInterface):
             return False
         return True
 
+    """
+         Returns the shortest path from node id1 to node id2 using Dijkstra's Algorithm
+         @param id1: The start node id
+         @param id2: The end node id
+         @return: The distance of the path, a list of the nodes ids that the path goes through
+    """
+
     def shortest_path(self, id1: int, id2: int) -> (float, list):
         if self.graph.nodes.get(id1) is None:
             raise Exception('Node {} is not exist in the graph'.format(id1))
@@ -101,6 +109,10 @@ class GraphAlgo(GraphAlgoInterface):
         if id1 == id2:
             return 0, [id1]
         return self.dijkstra(id1, id2)
+
+    """
+        plot of the graph in matplotlib
+    """
 
     def plot_graph(self) -> None:
         for node in self.graph.get_all_v().values():
@@ -122,6 +134,14 @@ class GraphAlgo(GraphAlgoInterface):
                 x2, y2, z2 = dest.get_location()
                 plt.annotate("", xy=(x, y), xytext=(x2, y2), arrowprops=dict(arrowstyle="->"))
         plt.show()
+
+    """
+    dijkstra implementation:
+          Returns the shortest path from node id1 to node id2
+          @param id1: The start node id(src)
+          @param id2: The end node id(dst)
+          @return: The distance of the path, a list of the nodes ids that the path goes through
+     """
 
     def dijkstra(self, src, dest):
         distances = {node: inf for node in self.graph.nodes.keys()}
@@ -149,6 +169,13 @@ class GraphAlgo(GraphAlgoInterface):
             current_node = previous_nodes[current_node]
         return distances[dest], path
 
+    """
+    is_connect:
+        Returns if the graph is strongly connected 
+        @param self graph
+        @return: True if the graph is strongly connected and False if not
+         """
+
     def is_connect(self):
         vertex_size = self.graph.v_size()
         for i in self.graph.get_all_v():
@@ -159,6 +186,13 @@ class GraphAlgo(GraphAlgoInterface):
                 return False
 
         return True
+
+    """
+   is_connected_bfs:
+        Returns list with all the nodes that we visited when we start from specific node 
+        @param int node id (src)
+        @return: list with all the nodes we visited
+         """
 
     def is_connected_bfs(self, src: int):
         visited = []
