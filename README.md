@@ -159,3 +159,13 @@ https://user-images.githubusercontent.com/80645472/147509936-891cf128-88aa-4d9a-
 ![Screenshot 2021-12-27 235640](https://user-images.githubusercontent.com/80645472/147509919-8bd08d55-f2ec-4c3a-923b-61b97bd1a704.jpg)
 
 *to get the graph scaled the out of bound times were replaced by 50+ seconds
+
+# python table time algorhitms:
+
+![Screenshot 2021-12-28 003929](https://user-images.githubusercontent.com/80645472/147511683-5ae8f418-b272-4219-b550-e7f09038b98e.jpg)
+
+# java table time algorhitms:
+
+![Screenshot 2021-12-28 003959](https://user-images.githubusercontent.com/80645472/147511698-e3670aaf-7cea-4cab-84fb-b66ff42fb2f4.jpg)
+
+
