@@ -115,18 +115,28 @@ there are many function to play with in the gui window, some of them are for edi
  there is a small windows under the list button to put in the inputs numbers as it required for a speicfic button.
  ## edit Graph
 to load a grap press on the load button
+
 to save the graph after edit press the save button
+
 to add node press the add node and than put in the numbe of the node
+
 to add edge press the add edge and than put src,dist to connect it to a node
+
 to remove edge press the remove edge button and than put in the src,dist 
+
 to remove node  press the remove node button and than put in the number of the node
+
 ## run Algorhitms
 to get the center of the graph paint press find center button
+
 to find the shortest path between src,dist and get it paint press shortest path button and the put in src,dist
+
 to find out if the graph is connect press the isConnect button
+
 to find a result to tsp problem and get it paint put in 2 nodes and press than find tsp button
 
-if all of this does not helped you enough, you can look at this video to check out how it works:
+
+# if all the explantion above did not helped you enough, you can look at this video to check out how it works:
 
 
 
