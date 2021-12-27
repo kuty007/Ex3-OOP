@@ -147,6 +147,34 @@ https://user-images.githubusercontent.com/80645472/147509936-891cf128-88aa-4d9a-
 
 
 # compare times between language python VS java
+## the order in the table are by this oreder:
+
+1-1000 nodes graph-isConnected 
+
+2-1000 nodes graph-shortest path
+
+3-1000 nodes graph-cennter
+
+4-1000 nodes graph-tsp
+
+1-10000 nodes graph-isConnected 
+
+2-10000 nodes graph-shortest path
+
+3-10000 nodes graph-cennter
+
+4-10000 nodes graph-tsp
+
+1-100000 nodes graph-isConnected 
+
+2-100000 nodes graph-shortest path
+
+3-100000 nodes graph-cennter
+
+4-100000 nodes graph-tsp
+
+![image](https://user-images.githubusercontent.com/80645472/147510089-5ecb8208-55c1-4252-87e4-b50dc9949c03.png)
+
 
 ![Screenshot 2021-12-27 235620](https://user-images.githubusercontent.com/80645472/147509910-758c8e22-f561-4317-b4fc-9c89409c6926.jpg)
 
