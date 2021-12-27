@@ -151,7 +151,8 @@ https://user-images.githubusercontent.com/80645472/147509936-891cf128-88aa-4d9a-
 
 ![Screenshot 2021-12-28 001530](https://user-images.githubusercontent.com/80645472/147510528-84ae6740-c952-4f2e-9b79-abb0b1d11f23.jpg)
 
-![Screenshot 2021-12-27 235620](https://user-images.githubusercontent.com/80645472/147509910-758c8e22-f561-4317-b4fc-9c89409c6926.jpg)
+
+![Screenshot 2021-12-28 003018](https://user-images.githubusercontent.com/80645472/147511259-b4a1165b-0591-4db9-974f-5ad5c80bfc86.jpg)
 
 *this graph made with plotly and can show more function,codes for those table graph are in the compare file.
 
