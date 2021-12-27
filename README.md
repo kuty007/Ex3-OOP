@@ -97,5 +97,10 @@ After going through all the neighbors of the node, updates that we visited this 
 Repeat these steps until the queue is empty or has reached the destination node. If the queue is empty it means it did not reach the destination node (the graph is not connected), return infinity. Otherwise returns the tag of the destination node. Note: The method change the info, tag and pre values. Complexity: O((|V|+|E|)log|V|), |V|=number of nodes, |E|=number of edges. 
 https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
+# UML
+
+![Screenshot 2021-12-27 195348](https://user-images.githubusercontent.com/80645472/147495979-0326320f-7a04-4bc8-a7a6-82ffa91eba4b.png)
+
+
 # How to run the code:
 *&^%$#@*&^%$#@*&^%$#@
