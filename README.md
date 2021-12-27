@@ -58,7 +58,9 @@ https://en.wikipedia.org/wiki/Directed_graph
  
  ![Sa_poland_tsp](https://user-images.githubusercontent.com/80645472/147453871-36d85b77-5dd2-44d3-8109-51fe13cf781a.gif)
  
- ### TSP - Travelling salesman problem - Computes a list of consecutive nodes wich go over all the nodes in cities. https://en.wikipedia.org/wiki/Travelling_salesman_problem
+ ### TSP - Travelling salesman problem - Computes a list of consecutive nodes wich go over all the nodes in cities.
+ 
+ https://en.wikipedia.org/wiki/Travelling_salesman_problem
 
 # private method that we used:
 
