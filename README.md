@@ -27,6 +27,7 @@ in the seconde part we run some algorhitms that we build on the DWG to check som
  ## Node Data:
  
 Represents vertex of Directed Weighted Graph - construct of key and location. 
+
 -https://en.wikipedia.org/wiki/Vertex_(graph_theory)
 
  ## Directed Weighted Graph:
