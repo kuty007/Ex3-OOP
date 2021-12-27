@@ -44,10 +44,13 @@ https://en.wikipedia.org/wiki/Directed_graph
 Represents algorithms that can be used on directed graph:
 
  isConnected - Cheking if there is a valid path from each node to others. https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
+ 
  ![spsa](https://user-images.githubusercontent.com/80645472/147453694-41aaa2d4-bbec-4009-81f2-0dafbf440a5e.gif)
  
  Shoretest Path - Presents the shortest path between source to destination. https://en.wikipedia.org/wiki/Shortest_path_problem
+ 
  Center - Finds the vertex which minimizes the max distance to all the other nodes https://en.wikipedia.org/wiki/Graph_center
+ 
  ![Sa_poland_tsp](https://user-images.githubusercontent.com/80645472/147453871-36d85b77-5dd2-44d3-8109-51fe13cf781a.gif)
  
  TSP - Travelling salesman problem - Computes a list of consecutive nodes wich go over all the nodes in cities. https://en.wikipedia.org/wiki/Travelling_salesman_problem
