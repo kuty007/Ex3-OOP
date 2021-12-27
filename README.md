@@ -103,4 +103,31 @@ https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
 
 # How to run the code:
-*&^%$#@*&^%$#@*&^%$#@
+download all the files from github,open the files in ide that suitable for python 3.8 version and higher,than run gui class.
+it will open you a windows to run some graphs we made,
+the graph are named by the larger(node,edge).
+there are many function to play with in the gui window, some of them are for edit the graph and other to run algorhitms as describe in the GraphAlgo class(can see it at the top of this page)
+
+![cfb57136-d11b-4f2f-8371-8d8d8341f03c](https://user-images.githubusercontent.com/80645472/147507733-9fd1cc66-1050-4dde-84ae-7e744067be0c.jpg)
+
+ # GUI instruction:
+ there is a small windows under the list button to put in the inputs numbers as it required for a speicfic button.
+ ## edit Graph
+to load a grap press on the load button
+to save the graph after edit press the save button
+to add node press the add node and than put in the numbe of the node
+to add edge press the add edge and than put src,dist to connect it to a node
+to remove edge press the remove edge button and than put in the src,dist 
+to remove node  press the remove node button and than put in the number of the node
+## run Algorhitms
+to get the center of the graph paint press find center button
+to find the shortest path between src,dist and get it paint press shortest path button and the put in src,dist
+to find out if the graph is connect press the isConnect button
+to find a result to tsp problem and get it paint put in 2 nodes and press than find tsp button
+
+if all of this does not helped you enough, you can look at this video to check out how it works:
+
+
+
+https://user-images.githubusercontent.com/80645472/147508417-1e18b575-d649-4777-ad51-c4b632e6a32c.mp4
+
