@@ -62,6 +62,7 @@ Updates his tag To be the node's id from which he came to.
 Add this node to the queue.
 After going through all the neighbors of the node, updates that we visited this node by change his info to "Black" and therefore will not visit it again.
 Repeat these steps until the queue is empty or has reached the destination node. If the queue is empty it means it did not reach the destination node (the graph is not connected), return infinity. Otherwise returns the tag of the destination node. Note: The method change the info, tag and pre values. Complexity: O((|V|+|E|)log|V|), |V|=number of nodes, |E|=number of edges. 
+
 https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
 # How to run the code:
