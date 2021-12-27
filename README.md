@@ -35,10 +35,10 @@ that represent the number of changes in the graph.
  
 Represents algorithms that can be used on directed graph:
 
-### isConnected - Cheking if there is a valid path from each node to others. https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
-### Shoretest Path - Presents the shortest path between source to destination. https://en.wikipedia.org/wiki/Shortest_path_problem
-### Center - Finds the vertex which minimizes the max distance to all the other nodes https://en.wikipedia.org/wiki/Graph_center
-### TSP - Travelling salesman problem - Computes a list of consecutive nodes wich go over all the nodes in cities. https://en.wikipedia.org/wiki/Travelling_salesman_problem
+ isConnected - Cheking if there is a valid path from each node to others. https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
+ Shoretest Path - Presents the shortest path between source to destination. https://en.wikipedia.org/wiki/Shortest_path_problem
+ Center - Finds the vertex which minimizes the max distance to all the other nodes https://en.wikipedia.org/wiki/Graph_center
+ TSP - Travelling salesman problem - Computes a list of consecutive nodes wich go over all the nodes in cities. https://en.wikipedia.org/wiki/Travelling_salesman_problem
 
 private method that we used:
 
