@@ -108,7 +108,8 @@ it will open you a windows to run some graphs we made,
 the graph are named by the larger(node,edge).
 there are many function to play with in the gui window, some of them are for edit the graph and other to run algorhitms as describe in the GraphAlgo class(can see it at the top of this page)
 
-![cfb57136-d11b-4f2f-8371-8d8d8341f03c](https://user-images.githubusercontent.com/80645472/147507733-9fd1cc66-1050-4dde-84ae-7e744067be0c.jpg)
+![eryh](https://user-images.githubusercontent.com/80645472/147508555-b6684c42-f003-4d38-a25d-95caebfa5c04.jpg)
+
 
  # GUI instruction:
  there is a small windows under the list button to put in the inputs numbers as it required for a speicfic button.
