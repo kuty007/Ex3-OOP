@@ -140,7 +140,16 @@ to find a result to tsp problem and get it paint put in 2 nodes and press than f
 
 
 
-https://user-images.githubusercontent.com/80645472/147508417-1e18b575-d649-4777-ad51-c4b632e6a32c.mp4
+
+https://user-images.githubusercontent.com/80645472/147509936-891cf128-88aa-4d9a-a8f2-1dc8015f69c6.mp4
+
+
+
 
 # compare times between language python VS java
 
+![Screenshot 2021-12-27 235620](https://user-images.githubusercontent.com/80645472/147509910-758c8e22-f561-4317-b4fc-9c89409c6926.jpg)
+
+![Screenshot 2021-12-27 235640](https://user-images.githubusercontent.com/80645472/147509919-8bd08d55-f2ec-4c3a-923b-61b97bd1a704.jpg)
+
+to get the graph scaled the out of bound times were replaced by 50+ seconds
