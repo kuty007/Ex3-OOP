@@ -17,6 +17,9 @@ https://github.com/avidanAbitbol
 This project is an assignment in an object-oriented course at Ariel University.
 The project is about implementing a directed weithted graph and exploring some graph algorithms.
 
+*to learn more about directed graph:
+http://math.oxford.emory.edu/site/cs171/directedAndEdgeWeightedGraphs/
+
 ## Creating and Implementing Directed Weighted Graph Theory.
 this project had 2 main part: in the first part we had to implemment an Directed Weighted Graph,
 in the seconde part we implement and run some algorhitms that we build on the DWG to check some skills.
