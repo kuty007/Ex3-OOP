@@ -179,15 +179,18 @@ while run:
             filepath = filedialog.asksaveasfilename(title="Open graph from file")
             graph.save_to_json(filepath)
             pyautogui.alert("Graph was saved")
-
             print("saved")
         if button_center.clicked:
             center = graph.centerPoint()
-            pyautogui.alert(center)
-            draw_center(win, (200, 0, 0), center[0])
-            pygame.display.flip()
-            pygame.event.pump()
-            pygame.time.delay(2 * 1000)
+
+            if center[0] > -1:
+                pyautogui.alert(center)
+                draw_center(win, (200, 0, 0), center[0])
+                pygame.display.flip()
+                pygame.event.pump()
+                pygame.time.delay(2 * 1000)
+            else:
+                pyautogui.alert(center)
 
         if button_tsp.clicked:
             if len(nodes_id_input) > 0:
