@@ -21,19 +21,21 @@ in the seconde part we run some algorhitms that we build on the DWG to check som
 # Classes:
  ## Node Data:
  
-Represents vertex of Directed Weighted Graph - construct of key and location. _-https://en.wikipedia.org/wiki/Vertex_(graph_theory)
+Represents vertex of Directed Weighted Graph - construct of key and location. 
+-https://en.wikipedia.org/wiki/Vertex_(graph_theory)
 
  ## Directed Weighted Graph:
  
 Each DiGraph contain dictionary of his nodes, and each node contain his edges.
 In addition each DiGraph holds the number of edges in the graph and a mode counter 
-that represent the number of changes in the graph. _-_-https://en.wikipedia.org/wiki/Directed_graph
+that represent the number of changes in the graph. 
+-https://en.wikipedia.org/wiki/Directed_graph
 
  ## Directed Weighted Graph Algorithms:
  
 Represents algorithms that can be used on directed graph:
 
-### isConnected - Cheking if there is a valid path from each node to others. _-https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
+### isConnected - Cheking if there is a valid path from each node to others. -https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
 ### Shoretest Path - Presents the shortest path between source to destination. _-https://en.wikipedia.org/wiki/Shortest_path_problem
 ### Center - Finds the vertex which minimizes the max distance to all the other nodes _-https://en.wikipedia.org/wiki/Graph_center
 ### TSP - Travelling salesman problem - Computes a list of consecutive nodes wich go over all the nodes in cities. _- https://en.wikipedia.org/wiki/Travelling_salesman_problem
@@ -47,7 +49,8 @@ Pop the first node from the queue.
 Gets a collection of this node edges.
 Goes through all the nodes that have an edge from the pop node.
 Check if the node has already been visited, if so skip it(tag = 1 -> visited, tag = -1 -> not visited). Otherwise mark it as visited (update his own tag) and add the node to the queue.
-Add this node's neighbors to the queue and repeat these steps The method use counter that count the number of nodes that connected to the source node. After the queue is empty check if the counter value equal to the number of nodes in this graph that means that the source node connected. If so the method will return true, Otherwise false. Note: The method change the tag values. Complexity: O(|V|+|E|), |V|=number of nodes, |E|=number of edges. _-https://en.wikipedia.org/wiki/Breadth-first_search
+Add this node's neighbors to the queue and repeat these steps The method use counter that count the number of nodes that connected to the source node. After the queue is empty check if the counter value equal to the number of nodes in this graph that means that the source node connected. If so the method will return true, Otherwise false. Note: The method change the tag values. Complexity: O(|V|+|E|), |V|=number of nodes, |E|=number of edges. 
+-https://en.wikipedia.org/wiki/Breadth-first_search
 
 ## Dijkstra :
 This private method based on Dijkstra's algorithm. Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a graph. In other words it finds the shortest paths between the source node and the destination node. The method uses the weight of each node to update his current distance from the source node. The method stored a priority queue(priority is determined by the weight) of the visited nodes:
@@ -58,7 +61,8 @@ Updates his weight to be the distance between the node and the source node.
 Updates his tag To be the node's id from which he came to.
 Add this node to the queue.
 After going through all the neighbors of the node, updates that we visited this node by change his info to "Black" and therefore will not visit it again.
-Repeat these steps until the queue is empty or has reached the destination node. If the queue is empty it means it did not reach the destination node (the graph is not connected), return infinity. Otherwise returns the tag of the destination node. Note: The method change the info, tag and pre values. Complexity: O((|V|+|E|)log|V|), |V|=number of nodes, |E|=number of edges. _-https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+Repeat these steps until the queue is empty or has reached the destination node. If the queue is empty it means it did not reach the destination node (the graph is not connected), return infinity. Otherwise returns the tag of the destination node. Note: The method change the info, tag and pre values. Complexity: O((|V|+|E|)log|V|), |V|=number of nodes, |E|=number of edges. 
+-https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
 # How to run the code:
 *&^%$#@*&^%$#@*&^%$#@
