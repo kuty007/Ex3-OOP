@@ -174,7 +174,9 @@ while run:
             center = graph.centerPoint()
             pyautogui.alert(center)
             draw_center(win, (200, 0, 0), center[0])
-            pygame.display.update()
+            pygame.display.flip()
+            pygame.event.pump()
+            pygame.time.delay(1 * 1000)
 
         if button_tsp.clicked:
             print("להוסיף ליסט לבדיקה")
@@ -190,7 +192,9 @@ while run:
             pyautogui.alert(x)
             print(graph.shortest_path(34, 37))
             draw_shortest_path("green", x[1])
-            pygame.display.update()
+            pygame.display.flip()
+            pygame.event.pump()
+            pygame.time.delay(1 * 1000)
         if button_addEdge.clicked:
             print("added")
         if button_addNode.clicked:
