@@ -50,7 +50,7 @@ Gets a collection of this node edges.
 Goes through all the nodes that have an edge from the pop node.
 Check if the node has already been visited, if so skip it(tag = 1 -> visited, tag = -1 -> not visited). Otherwise mark it as visited (update his own tag) and add the node to the queue.
 Add this node's neighbors to the queue and repeat these steps The method use counter that count the number of nodes that connected to the source node. After the queue is empty check if the counter value equal to the number of nodes in this graph that means that the source node connected. If so the method will return true, Otherwise false. Note: The method change the tag values. Complexity: O(|V|+|E|), |V|=number of nodes, |E|=number of edges. 
--https://en.wikipedia.org/wiki/Breadth-first_search
+https://en.wikipedia.org/wiki/Breadth-first_search
 
 ## Dijkstra :
 This private method based on Dijkstra's algorithm. Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a graph. In other words it finds the shortest paths between the source node and the destination node. The method uses the weight of each node to update his current distance from the source node. The method stored a priority queue(priority is determined by the weight) of the visited nodes:
@@ -62,7 +62,7 @@ Updates his tag To be the node's id from which he came to.
 Add this node to the queue.
 After going through all the neighbors of the node, updates that we visited this node by change his info to "Black" and therefore will not visit it again.
 Repeat these steps until the queue is empty or has reached the destination node. If the queue is empty it means it did not reach the destination node (the graph is not connected), return infinity. Otherwise returns the tag of the destination node. Note: The method change the info, tag and pre values. Complexity: O((|V|+|E|)log|V|), |V|=number of nodes, |E|=number of edges. 
--https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
 # How to run the code:
 *&^%$#@*&^%$#@*&^%$#@
