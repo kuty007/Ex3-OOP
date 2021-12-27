@@ -40,8 +40,7 @@ that represent the number of changes in the graph.
 https://en.wikipedia.org/wiki/Directed_graph
 
  ## Directed Weighted Graph Algorithms:
- 
-Represents algorithms that can be used on directed graph:
+ Represents algorithms that can be used on directed graph:
 
  ### isConnected - Cheking if there is a valid path from each node to others.
  
