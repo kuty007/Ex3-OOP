@@ -44,6 +44,7 @@ https://en.wikipedia.org/wiki/Directed_graph
 Represents algorithms that can be used on directed graph:
 
  isConnected - Cheking if there is a valid path from each node to others.
+ 
  https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
  
  ![spsa](https://user-images.githubusercontent.com/80645472/147453694-41aaa2d4-bbec-4009-81f2-0dafbf440a5e.gif)
