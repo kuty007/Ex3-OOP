@@ -178,13 +178,17 @@ class GraphAlgo(GraphAlgoInterface):
 
     def is_connect(self):
         vertex_size = self.graph.v_size()
-        for i in self.graph.get_all_v():
-            src = self.graph.get_node(i)
-            list1 = self.is_connected_bfs(src.get_key())
-            len_list_vertex = len(list1)
-            if len_list_vertex != vertex_size:
-                return False
-
+        src = self.graph.get_node(0)
+        list1 = self.is_connected_bfs(src.get_key())
+        len_list_vertex = len(list1)
+        if len_list_vertex != vertex_size:
+            return False
+        gre = self.transpose()
+        self.graph = gre
+        list2 = self.is_connected_bfs(src.get_key())
+        len_list_vertex2 = len(list2)
+        if len_list_vertex2 != vertex_size:
+            return False
         return True
 
     """
@@ -208,6 +212,20 @@ class GraphAlgo(GraphAlgoInterface):
                     q.put(nod)
                     visited.append(nod)
         return visited
+
+    def transpose(self):
+        """
+        Return transpose graph.
+        Meaning each edge in the original graph transpose (src-->dest)-->(src<--dest).
+        :return:
+        """
+        gra = DiGraph()
+        for k, v in self.graph.get_all_v().items():
+            gra.add_node(k, v.get_location())
+        for k, v in gra.get_all_v().items():
+            for dest, w in self.graph.all_in_edges_of_node(k).items():
+                gra.add_edge(k, dest, w)
+        return gra
 
 
 g_algo = GraphAlgo()  # init an empty graph - for the GraphAlgo

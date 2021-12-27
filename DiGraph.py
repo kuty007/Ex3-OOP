@@ -13,6 +13,11 @@ class DiGraph(GraphInterface):
         self.__changes = 0
         self.__num_of_edges = 0
 
+    def __repr__(self) -> str:
+        return f"Graph: |V| = {len(self.nodes)},  |E|={self.__num_of_edges}   "
+
+
+
     def get_all_v(self) -> dict:
         return self.nodes
 

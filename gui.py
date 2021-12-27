@@ -170,6 +170,7 @@ while run:
             quit()
 
         if button_load.clicked:
+
             filename = filedialog.askopenfilename(title="Open graph from file")
             graph.load_from_json(filename)
             print(filename)
