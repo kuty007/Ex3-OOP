@@ -1,4 +1,5 @@
-![4-ew7H](https://user-images.githubusercontent.com/80645472/147452382-26c13986-792e-4ca6-a93e-fcf34bbe5a47.gif)
+![4-ew7H](https://user-images.githubusercontent.com/80645472/147452746-090ae5cf-88a7-4752-b99d-7a236752444c.gif)
+
 
 # Ex3-OOP
 Made by Asaf Yekutiel,Yulia Katz and Avidan Abitbol
