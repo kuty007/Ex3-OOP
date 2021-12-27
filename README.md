@@ -64,7 +64,7 @@ https://en.wikipedia.org/wiki/Directed_graph
 
 # private method that we used:
 
-## bfs(to check connectivity) 
+## bfs: 
 : 
 ![Graph-BFS](https://user-images.githubusercontent.com/80645472/147453734-bd3b55a8-2914-47fb-a52b-0fffd7afbc2a.gif)
 
