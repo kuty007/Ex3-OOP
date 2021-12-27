@@ -103,4 +103,58 @@ https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
 
 # How to run the code:
-*&^%$#@*&^%$#@*&^%$#@
+download all the files from github,open the files in ide that suitable for python 3.8 version and higher,than run gui class.
+it will open you a windows to run some graphs we made,
+the graph are named by the larger(node,edge).
+there are many function to play with in the gui window, some of them are for edit the graph and other to run algorhitms as describe in the GraphAlgo class(can see it at the top of this page)
+
+![eryh](https://user-images.githubusercontent.com/80645472/147508555-b6684c42-f003-4d38-a25d-95caebfa5c04.jpg)
+
+
+ # GUI instruction:
+ there is a small windows under the list button to put in the inputs numbers as it required for a speicfic button.
+ ## edit Graph
+to load a grap press on the load button
+
+to save the graph after edit press the save button
+
+to add node press the add node and than put in the numbe of the node
+
+to add edge press the add edge and than put src,dist to connect it to a node
+
+to remove edge press the remove edge button and than put in the src,dist 
+
+to remove node  press the remove node button and than put in the number of the node
+
+## run Algorhitms
+to get the center of the graph paint press find center button
+
+to find the shortest path between src,dist and get it paint press shortest path button and the put in src,dist
+
+to find out if the graph is connect press the isConnect button
+
+to find a result to tsp problem and get it paint put in 2 nodes and press than find tsp button
+
+
+# if all the explantion above did not helped you enough, you can look at this video to check out how it works:
+
+
+
+
+https://user-images.githubusercontent.com/80645472/147509936-891cf128-88aa-4d9a-a8f2-1dc8015f69c6.mp4
+
+
+
+
+# compare times between language python VS java
+## the order in the table are by this oreder:
+
+![Screenshot 2021-12-28 001530](https://user-images.githubusercontent.com/80645472/147510528-84ae6740-c952-4f2e-9b79-abb0b1d11f23.jpg)
+
+![Screenshot 2021-12-27 235620](https://user-images.githubusercontent.com/80645472/147509910-758c8e22-f561-4317-b4fc-9c89409c6926.jpg)
+
+*this graph made with plotly and can show more function,codes for those table graph are in the compare file.
+
+![Screenshot 2021-12-27 235640](https://user-images.githubusercontent.com/80645472/147509919-8bd08d55-f2ec-4c3a-923b-61b97bd1a704.jpg)
+
+*to get the graph scaled the out of bound times were replaced by 50+ seconds
