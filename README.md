@@ -50,7 +50,7 @@ Represents algorithms that can be used on directed graph:
  
  TSP - Travelling salesman problem - Computes a list of consecutive nodes wich go over all the nodes in cities. https://en.wikipedia.org/wiki/Travelling_salesman_problem
 
-private method that we used:
+# private method that we used:
 
 ## bfs(to check connectivity) : 
 ![Graph-BFS](https://user-images.githubusercontent.com/80645472/147453734-bd3b55a8-2914-47fb-a52b-0fffd7afbc2a.gif)
