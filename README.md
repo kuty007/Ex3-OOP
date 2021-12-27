@@ -64,7 +64,8 @@ https://en.wikipedia.org/wiki/Directed_graph
 
 # private method that we used:
 
-## bfs(to check connectivity) : 
+## bfs(to check connectivity) 
+: 
 ![Graph-BFS](https://user-images.githubusercontent.com/80645472/147453734-bd3b55a8-2914-47fb-a52b-0fffd7afbc2a.gif)
 
 This private method based on breadth-first search. BFS is an algorithm for traversing or searching graph data structures. The method checks whether or not the graph is strongly linked, in other words it checks whether there is a path between node to each other node. The method use counter that count the number of nodes that connected to the source node. If counter value equal to the number of nodes in this graph that means that the source node connected. To check if the whole graph is strongly connected needs to run the method on all the nodes in the graph. The method stored a queue of the visited nodes:
