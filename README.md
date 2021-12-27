@@ -142,3 +142,5 @@ to find a result to tsp problem and get it paint put in 2 nodes and press than f
 
 https://user-images.githubusercontent.com/80645472/147508417-1e18b575-d649-4777-ad51-c4b632e6a32c.mp4
 
+# compare times between language python VS java
+
