@@ -49,8 +49,7 @@ class GraphAlgo(GraphAlgoInterface):
         return path, total_distance
 
     def centerPoint(self) -> (int, float):
-        if not self.is_connect():  # if the graph not connected we can't find a center
-            return -1, inf
+
         dictionary = {}  # this will contain each node and the value of the longest shortest_path from him to node
         # in the graph
         for i in self.graph.get_all_v():
@@ -58,7 +57,10 @@ class GraphAlgo(GraphAlgoInterface):
             for j in self.graph.get_all_v():
                 if i != j:
                     max_dis = self.shortest_path(i, j)[0]
-                    if max_dis > mx:
+                    if max_dis == inf:
+                        return -1, inf
+                        # if the graph not connected we can't find a center
+                    elif max_dis > mx:
                         mx = max_dis
             dictionary.update({i: mx})
         x = min(dictionary, key=dictionary.get)

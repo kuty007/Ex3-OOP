@@ -51,8 +51,8 @@ class TestGraphAlgo(TestCase):
         graph_10000.load_from_json("10000Nodes.json")
         graph_100000 = GraphAlgo()
         graph_100000.load_from_json("100000.json")
-        #self.assertTrue(graph_1000.is_connect())
-        #self.assertTrue(graph_10000.is_connect())
+        # self.assertTrue(graph_1000.is_connect())
+        # self.assertTrue(graph_10000.is_connect())
         self.assertTrue(graph_100000.is_connect())
 
     def test_shortest_path(self):
@@ -62,13 +62,55 @@ class TestGraphAlgo(TestCase):
         graph_10000.load_from_json("10000Nodes.json")
         graph_100000 = GraphAlgo()
         graph_100000.load_from_json("100000.json")
-        self.assertEqual("(774.0078942343703, [1, 862, 146, 15])", str(graph_1000.shortest_path(1, 15)))
+        # self.assertEqual("(774.0078942343703, [1, 862, 146, 15])", str(graph_1000.shortest_path(1, 15)))
+        # self.assertEqual("(870.6923682519312, [1, 3990, 1160, 1019, 3163, 8714, 15])", str(graph_10000.shortest_path(1, 15)))
+        self.assertEqual(
+            "(537.5195488123329, [1, 65221, 43448, 80018, 9319, 96684, 29032, 2373, 27009, 72251, 48769, 97983, 15])",
+            str(graph_100000.shortest_path(1, 15)))
+
+    def test_tsp(self):
+        graph_1000 = GraphAlgo()
+        graph_1000.load_from_json("1000Nodes.json")
+        graph_10000 = GraphAlgo()
+        graph_10000.load_from_json("10000Nodes.json")
+        graph_100000 = GraphAlgo()
+        graph_100000.load_from_json("100000.json")
+        # self.assertEqual("([1, 498, 685, 454, 656, 888, 857, 940, 2, 79, 654, 614, 335, 5], 1844.8834948984238)", str(graph_1000.TSP([1,2,5])))
+        # self.assertEqual("([1, 3990, 9861, 3226, 7675, 2008, 547, 9750, 3001, 8120, 5064, 83, 1650, 3420, 4225, 5914, 5, 3900, 2309, 9374, 8889, 2], 2041.2591236559015)", str(graph_10000.TSP([1,2,5])))
+        #self.assertEqual("([1, 82679, 51097, 58340, 16967, 46872, 23346, 51656, 52335, 2, 70697, 11013, 78028, 51406, 29713, 31406, 37651, 97554, 46963, 70478, 43285, 79691, 5], 939.6605756450049)",str(graph_100000.TSP([1, 2, 5])))
+        graph_g1 = GraphAlgo()
+        graph_g1.load_from_json("G1.json")
+        graph_g2 = GraphAlgo()
+        graph_g2.load_from_json("G2.json")
+        graph_g3 = GraphAlgo()
+        graph_g3.load_from_json("G3.json")
+        #self.assertEqual("([1, 2, 6, 5], 5.091901160431474)", str(graph_g1.TSP([1,2,5])))
+        self.assertEqual("([1, 2, 6, 5], 5.091901160431474)", str(graph_g2.TSP([1,2,5])))
+        #self.assertEqual("(40, 9.291743173960954)", str(graph_g3.centerPoint()))
+
+    def test_center(self):
+        graph_1000 = GraphAlgo()
+        graph_1000.load_from_json("1000Nodes.json")
+        graph_10000 = GraphAlgo()
+        graph_10000.load_from_json("10000Nodes.json")
+        graph_100000 = GraphAlgo()
+        graph_100000.load_from_json("100000.json")
+        graph_g1= GraphAlgo()
+        graph_g1.load_from_json("G1.json")
+        graph_g2 = GraphAlgo()
+        graph_g2.load_from_json("G2.json")
+        graph_g3 = GraphAlgo()
+        graph_g3.load_from_json("G3.json")
+
+        #self.assertEqual("(774.0078942343703, [1, 862, 146, 15])", str(graph_1000.centerPoint()))
         #self.assertEqual("(870.6923682519312, [1, 3990, 1160, 1019, 3163, 8714, 15])", str(graph_10000.shortest_path(1, 15)))
-        #self.assertEqual("(537.5195488123329, [1, 65221, 43448, 80018, 9319, 96684, 29032, 2373, 27009, 72251, 48769, 97983, 15])", str(graph_100000.shortest_path(1, 15)))
+        #self.assertEqual( "(537.5195488123329, [1, 65221, 43448, 80018, 9319, 96684, 29032, 2373, 27009, 72251, 48769, 97983, 15])",str(graph_100000.shortest_path(1, 15)))
+        self.assertEqual("(8, 9.925289024973141)", str(graph_g1.centerPoint()))
+        self.assertEqual("(0, 7.819910602212574)", str(graph_g2.centerPoint()))
+        self.assertEqual("(40, 9.291743173960954)", str(graph_g3.centerPoint()))
 
 
 
-# graph creator, |V|=7, |E|=19
 graph_2 = DiGraph()
 for i in range(7):
     graph_2.add_node(i)
@@ -106,7 +148,6 @@ graph_3.add_node(7, (1, 3, 0))
 graph_3.add_node(8, (3, 4, 0))
 graph_3.add_node(9, (2, 1, 0))
 
-
 graph_3.add_edge(0, 2, 1)
 graph_3.add_edge(1, 0, 1)
 graph_3.add_edge(2, 1, 1)
@@ -119,5 +160,3 @@ graph_3.add_edge(7, 8, 1)
 graph_3.add_edge(8, 9, 1)
 graph_3.add_edge(9, 7, 1)
 graph_3.add_edge(9, 8, 1)
-graph_1000 = GraphAlgo()
-graph_1000.load_from_json("1000Nodes.json")
