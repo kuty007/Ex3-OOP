@@ -23,7 +23,8 @@ http://math.oxford.emory.edu/site/cs171/directedAndEdgeWeightedGraphs/
 ## Creating and Implementing Directed Weighted Graph Theory.
 this project had 2 main part: in the first part we had to implemment an Directed Weighted Graph,
 in the seconde part we implement and run some algorhitms that we build on the DWG to check some skills.
-the issue of the second part is to compare time rum between 2 programming languages java VS python
+the issue of the second part is to compare time rum between 2 programming languages java VS python about same assignment.
+this is the java assignment: https://github.com/yukatz/OOP_2021_Ex2
 
 ![Screenshot 2021-12-27 102400](https://user-images.githubusercontent.com/80645472/147451867-ab021e18-a248-4612-9bc5-fe54696540c8.png)
 
