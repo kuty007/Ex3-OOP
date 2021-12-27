@@ -18,8 +18,9 @@ This project is an assignment in an object-oriented course at Ariel University.
 The project is about implementing a directed weithted graph and exploring some graph algorithms.
 
 ## Creating and Implementing Directed Weighted Graph Theory.
-this project had 2 main part: in the first part we had to implemment an Directed Weighted Graph Theory,
-in the seconde part we run some algorhitms that we build on the DWG to check some skills.
+this project had 2 main part: in the first part we had to implemment an Directed Weighted Graph,
+in the seconde part we implement and run some algorhitms that we build on the DWG to check some skills.
+the issue of the second part is to compare time rum between 2 programming languages java VS python
 
 ![Screenshot 2021-12-27 102400](https://user-images.githubusercontent.com/80645472/147451867-ab021e18-a248-4612-9bc5-fe54696540c8.png)
 
