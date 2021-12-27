@@ -28,7 +28,7 @@ in the seconde part we run some algorhitms that we build on the DWG to check som
  
 Represents vertex of Directed Weighted Graph - construct of key and location. 
 
--https://en.wikipedia.org/wiki/Vertex_(graph_theory)
+https://en.wikipedia.org/wiki/Vertex_(graph_theory)
 
  ## Directed Weighted Graph:
  ![Graph_cycle](https://user-images.githubusercontent.com/80645472/147454359-0387ac0e-709d-42ec-a23a-cf439a53f1a3.gif)
@@ -36,7 +36,8 @@ Represents vertex of Directed Weighted Graph - construct of key and location.
 Each DiGraph contain dictionary of his nodes, and each node contain his edges.
 In addition each DiGraph holds the number of edges in the graph and a mode counter 
 that represent the number of changes in the graph. 
--https://en.wikipedia.org/wiki/Directed_graph
+
+https://en.wikipedia.org/wiki/Directed_graph
 
  ## Directed Weighted Graph Algorithms:
  
