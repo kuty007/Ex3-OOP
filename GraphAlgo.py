@@ -50,7 +50,7 @@ class GraphAlgo(GraphAlgoInterface):
 
     def centerPoint(self) -> (int, float):
         if not self.is_connect():  # if the graph not connected we can't find a center
-            return (-1, inf),
+            return -1, inf
         dictionary = {}  # this will contain each node and the value of the longest shortest_path from him to node
         # in the graph
         for i in self.graph.get_all_v():
@@ -62,7 +62,7 @@ class GraphAlgo(GraphAlgoInterface):
                         mx = max_dis
             dictionary.update({i: mx})
         x = min(dictionary, key=dictionary.get)
-        return x, dictionary.get(x)
+        return (x, dictionary.get(x))
 
     def load_from_json(self, file_name: str) -> bool:
         gr = DiGraph()
