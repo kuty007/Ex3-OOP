@@ -7,7 +7,7 @@ Made by Asaf Yekutiel,Yulia Katz and Avidan Abitbol
 
 GitHub pages:
 
-https://github.com/yukatz
+https://github.com/yukatz 
 
 https://github.com/kuty007
 
@@ -69,9 +69,9 @@ https://en.wikipedia.org/wiki/Directed_graph
  
  ![Sa_poland_tsp](https://user-images.githubusercontent.com/80645472/147453871-36d85b77-5dd2-44d3-8109-51fe13cf781a.gif)
  
-# private method that we used:
+# Rrivate method that we used:
 
-## bfs: 
+## Bfs: 
 : 
 ![Graph-BFS](https://user-images.githubusercontent.com/80645472/147453734-bd3b55a8-2914-47fb-a52b-0fffd7afbc2a.gif)
 
@@ -100,6 +100,11 @@ https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 # UML
 
 ![Screenshot 2021-12-27 195348](https://user-images.githubusercontent.com/80645472/147495979-0326320f-7a04-4bc8-a7a6-82ffa91eba4b.png)
+
+
+
+##For more information please visite our wiki pages:
+# How to run the code:
 
 
 # How to run the code:
