@@ -22,6 +22,11 @@ class GraphAlgo(GraphAlgoInterface):
         return self.graph
 
     def TSP(self, node_lst: List[int]) -> (List[int], float):
+        """
+          TSP:
+              :param node_lst: list of nodes to go through
+              @return: The shortest path between all the nodes in the list and the weight of this course
+          """
         path_nodes = []
         path = []
         start_node = node_lst[0]
@@ -49,6 +54,11 @@ class GraphAlgo(GraphAlgoInterface):
         return path, total_distance
 
     def centerPoint(self) -> (int, float):
+        """
+         centerPoint:
+             @return:returns the id of the node that is most distance node form him is the closest and the weight of the
+             distance between them
+        """
 
         dictionary = {}  # this will contain each node and the value of the longest shortest_path from him to node
         # in the graph
@@ -96,14 +106,13 @@ class GraphAlgo(GraphAlgoInterface):
             return False
         return True
 
-    """
-         Returns the shortest path from node id1 to node id2 using Dijkstra's Algorithm
+    def shortest_path(self, id1: int, id2: int) -> (float, list):
+        """
+        Returns the shortest path from node id1 to node id2 using Dijkstra's Algorithm
          @param id1: The start node id
          @param id2: The end node id
          @return: The distance of the path, a list of the nodes ids that the path goes through
-    """
-
-    def shortest_path(self, id1: int, id2: int) -> (float, list):
+          """
         if self.graph.nodes.get(id1) is None:
             raise Exception('Node {} is not exist in the graph'.format(id1))
         if self.graph.nodes.get(id2) is None:
@@ -137,15 +146,14 @@ class GraphAlgo(GraphAlgoInterface):
                 plt.annotate("", xy=(x, y), xytext=(x2, y2), arrowprops=dict(arrowstyle="->"))
         plt.show()
 
-    """
-    dijkstra implementation:
-          Returns the shortest path from node id1 to node id2
-          @param id1: The start node id(src)
-          @param id2: The end node id(dst)
-          @return: The distance of the path, a list of the nodes ids that the path goes through
-     """
-
     def dijkstra(self, src, dest):
+        """
+           dijkstra implementation:
+                 Returns the shortest path from node id1 to node id2
+                 @param src: The start node id(src)
+                 @param dest: The end node id(dst)
+                 @return: The distance of the path, a list of the nodes ids that the path goes through
+            """
         distances = {node: inf for node in self.graph.nodes.keys()}
         previous_nodes = {src: -1}
         distances[src] = 0
@@ -171,14 +179,13 @@ class GraphAlgo(GraphAlgoInterface):
             current_node = previous_nodes[current_node]
         return distances[dest], path
 
-    """
-    is_connect:
-        Returns if the graph is strongly connected 
-        @param self graph
-        @return: True if the graph is strongly connected and False if not
-         """
-
     def is_connect(self):
+        """
+         is_connect:
+             Returns if the graph is strongly connected
+             @param self graph
+             @return: True if the graph is strongly connected and False if not
+              """
         vertex_size = self.graph.v_size()
         src = self.graph.get_node(0)
         list1 = self.is_connected_bfs(src.get_key())
@@ -193,14 +200,13 @@ class GraphAlgo(GraphAlgoInterface):
             return False
         return True
 
-    """
-   is_connected_bfs:
-        Returns list with all the nodes that we visited when we start from specific node 
-        @param int node id (src)
-        @return: list with all the nodes we visited
-         """
-
     def is_connected_bfs(self, src: int):
+        """
+         is_connected_bfs:
+              Returns list with all the nodes that we visited when we start from specific node
+              @param src node id
+              @return: list with all the nodes we visited
+               """
         visited = []
         q = queue.Queue()
         current = self.graph.get_node(src)
