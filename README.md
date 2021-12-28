@@ -69,7 +69,7 @@ https://en.wikipedia.org/wiki/Directed_graph
  
  ![Sa_poland_tsp](https://user-images.githubusercontent.com/80645472/147453871-36d85b77-5dd2-44d3-8109-51fe13cf781a.gif)
  
-# Rrivate method that we used:
+# Private method that we used:
 
 ## Bfs: 
 : 
