@@ -30,13 +30,14 @@ This is the java assignment: https://github.com/yukatz/OOP_2021_Ex2
 ![Screenshot 2021-12-27 102400](https://user-images.githubusercontent.com/80645472/147451867-ab021e18-a248-4612-9bc5-fe54696540c8.png)
 
 
-# UML
+# UML 
+Visualize the design of this project.
 
 ![Screenshot 2021-12-27 195348](https://user-images.githubusercontent.com/80645472/147495979-0326320f-7a04-4bc8-a7a6-82ffa91eba4b.png)
 
-
+[Comparison between language python VS java](https://github.com/kuty007/Ex3-OOP.wiki.git)
 
 ## For more information please visite our wiki pages:
- - Comparison between language python VS java: https://github.com/kuty007/Ex3-OOP.wiki.git
- - How to run the code: https://github.com/kuty007/Ex3-OOP.wiki.git
- - Classes and methods: https://github.com/kuty007/Ex3-OOP.wiki.git
+ - [Comparison between language python VS java](../../wiki)
+ - [How to run the code](../../wiki)
+ - [Classes and methods](../../wiki)
