@@ -15,8 +15,8 @@ class Node:
         """
         self.__key = k
         self.__location = location
-        self.__ni_out = {}
-        self.__ni_in = {}
+        self.__edges_out = {}
+        self.__edges_in = {}
         self.visited = False
 
     def reset_visited(self):
@@ -31,7 +31,7 @@ class Node:
         :param neighbor_id: dest node key
         :param weight: edge's weight
         """
-        self.__ni_out[neighbor_id] = weight
+        self.__edges_out[neighbor_id] = weight
 
     def add_edge_in(self, neighbor_id: int, weight: float) -> None:
         """
@@ -39,7 +39,7 @@ class Node:
         :param neighbor_id: dest node key
         :param weight: edge's weight
         """
-        self.__ni_in[neighbor_id] = weight
+        self.__edges_in[neighbor_id] = weight
 
     def get_edge_out(self) -> dict:
         """
@@ -47,7 +47,7 @@ class Node:
         each edge is represented using a pair (key, edge weight).
         :return: dictionary (key, edge weight).
         """
-        return self.__ni_out
+        return self.__edges_out
 
     def get_edge_in(self) -> dict:
         """
@@ -55,7 +55,7 @@ class Node:
         each edge is represented using a pair (key, edge weight).
         :return: dictionary (key, edge weight).
         """
-        return self.__ni_in
+        return self.__edges_in
 
     def get_key(self) -> int:
         """
@@ -66,7 +66,7 @@ class Node:
 
     def get_location(self) -> tuple:
         """
-        Return this node location as a 3DPoint (x, y, z).
+        Return this node location as a tuple (x, y, z).
         :return: this node location
         """
         return self.__location
@@ -94,17 +94,17 @@ class Node:
         Return the edge as dictionary {"src": src node_id, "w": edge weight, "dest": dest node_id}
         :return: the edge as dictionary
         """
-        l_list = []
+        l = []
         for k, v in self.get_edge_out().items():
             m_dict = {"src": int(self.get_key()), "w": float(v), "dest": int(k)}
-            l_list.append(m_dict)
-        return l_list
+            l.append(m_dict)
+        return l
 
     def __repr__(self):
         return str([self.get_key()])
 
     def __str__(self) -> str:
-        return "Node: id: " + str(self.__key) + ' neighbors: ' + str(self.__ni_out)
+        return "Node: id: " + str(self.__key) + ' neighbors: ' + str(self.__edges_out)
 
     def __eq__(self, o: object) -> bool:
         if self is o:
@@ -112,5 +112,5 @@ class Node:
         if o is None or self.__class__ is not o.__class__:
             return False
         other = o
-        return self.__key == other.__key and self.__location.__eq__(other.__location) and self.__ni_in.__eq__(
-            other.__ni_in) and self.__ni_out.__eq__(other.__ni_out)
+        return self.__key == other.__key and self.__location.__eq__(other.__location) and self.__edges_in.__eq__(
+            other.__ni_in) and self.__edges_out.__eq__(other.__ni_out)
