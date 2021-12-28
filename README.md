@@ -49,10 +49,17 @@ https://en.wikipedia.org/wiki/Directed_graph
  Represents algorithms that can be used on directed graph:
 
  ### isConnected - Cheking if there is a valid path from each node to others.
+ Method - Using a ***isConnected*** and ***Transpose*** functions.
+ 
+ 
+ 
+ 
  
  https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
  
   ### Shoretest Path - Presents the shortest path between source to destination. 
+  Method - Checks the shortest route using a Dijkstra function.
+  Checking for extreme cases - same node added twice, the node does not exist in the graph.
  
  https://en.wikipedia.org/wiki/Shortest_path_problem
  
@@ -60,6 +67,9 @@ https://en.wikipedia.org/wiki/Directed_graph
  
  
  ### Center - Finds the vertex which minimizes the max distance to all the other nodes
+ Method - Checks the shortest path between a vertex and the rest of the vertices, compares the lengths of the orbits and selects the longest one. Do this for each vertex and finally compare the maximum of all and take the lowest.
+ *Checking for extreme cases* - if the graph not connected we can't find a center.
+ 
  
  https://en.wikipedia.org/wiki/Graph_center
  
