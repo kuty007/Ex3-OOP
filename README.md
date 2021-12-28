@@ -32,10 +32,7 @@ This is the java assignment: https://github.com/yukatz/OOP_2021_Ex2
 
 
 # UML 
-Visualize the design of this project.
-
-
-[Comparison between language python VS java](https://github.com/kuty007/Ex3-OOP.wiki.git)
+![UML](https://user-images.githubusercontent.com/92925727/147594092-d358de24-6384-4edb-b63b-587abfaaae52.jpeg)
 
 ## For more information please visite our [WIKI pages](../../wiki)
 
