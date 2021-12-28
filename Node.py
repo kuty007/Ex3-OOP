@@ -1,4 +1,3 @@
-
 class Node:
     """
     This class represent a node (vertex).
@@ -18,6 +17,13 @@ class Node:
         self.__location = location
         self.__ni_out = {}
         self.__ni_in = {}
+        self.visited = False
+
+    def reset_visited(self):
+        self.visited = False
+
+    def get_visited(self):
+        return self.visited
 
     def add_edge_out(self, neighbor_id: int, weight: float) -> None:
         """

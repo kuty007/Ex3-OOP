@@ -185,21 +185,26 @@ class GraphAlgo(GraphAlgoInterface):
              Returns if the graph is strongly connected
              @param self graph
              @return: True if the graph is strongly connected and False if not
-              """
+             """
+        graph = self.graph
+        for nodes in self.graph.nodes:
+            node = self.get_graph().get_node(nodes)
+            node.reset_visited()
+        gre = self.transpose()
         vertex_size = self.graph.v_size()
         src = self.graph.get_node(0)
         list1 = self.is_connected_bfs(src.get_key())
         len_list_vertex = len(list1)
         if len_list_vertex != vertex_size:
             return False
-        gre = self.transpose()
         self.graph = gre
         list2 = self.is_connected_bfs(src.get_key())
         len_list_vertex2 = len(list2)
         if len_list_vertex2 != vertex_size:
+            self.graph = graph
             return False
+        self.graph = graph
         return True
-
     def is_connected_bfs(self, src: int):
         """
          is_connected_bfs:
@@ -211,12 +216,14 @@ class GraphAlgo(GraphAlgoInterface):
         q = queue.Queue()
         current = self.graph.get_node(src)
         visited.append(current)
+        current.visited = True
         q.put(current)
         while not q.empty():
             current = q.get()
             for ed in current.get_edge_out():
                 nod = self.graph.get_node(ed)
-                if nod not in visited:
+                if not nod.get_visited():
+                    nod.visited = True
                     q.put(nod)
                     visited.append(nod)
         return visited
@@ -239,6 +246,5 @@ class GraphAlgo(GraphAlgoInterface):
 g_algo = GraphAlgo()  # init an empty graph - for the GraphAlgo
 file = "A4.json"
 g_algo.load_from_json(file)
-for i in g_algo.get_graph().get_all_v():
-    for j in g_algo.get_graph().all_out_edges_of_node(i):
-        print(j)
+g_algo.is_connect()
+g_algo.save_to_json("ro.json")
