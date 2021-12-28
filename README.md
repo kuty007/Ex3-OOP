@@ -39,5 +39,5 @@ Visualize the design of this project.
 
 ## For more information please visite our wiki pages:
  - [Comparison between language python VS java](../../wiki)
- - [How to run the code](https://github.com/kuty007/Ex3-OOP.wiki.git)
- - [Classes and methods](https://github.com/kuty007/Ex3-OOP.wiki.git)
+ - [How to run the code](../../wiki)
+ - [Classes and methods](../../wiki)
