@@ -39,4 +39,4 @@ This is the java assignment: https://github.com/yukatz/OOP_2021_Ex2
 ##For more information please visite our wiki pages:
 # Comparison between language python VS java: https://github.com/kuty007/Ex3-OOP.wiki.git
 # How to run the code: https://github.com/kuty007/Ex3-OOP.wiki.git
-# Classes and methods: 
+# Classes and methods: https://github.com/kuty007/Ex3-OOP.wiki.git
